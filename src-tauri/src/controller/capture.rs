@@ -54,7 +54,7 @@ mod imp {
             },
         },
     };
-    use xinput::{XInputState, XInputHandle};
+    use xinput::XInputHandle;
     use std::{mem, thread, time::Duration};
 
     const HID_USAGE_PAGE_GENERIC: u16 = 0x01;
@@ -103,7 +103,7 @@ mod imp {
                     for (xi_index, &handle) in handles.iter().enumerate().take(4) {
                         let user_index = xi_index as u32;
                         if let Ok(state) = xi.get_state(user_index) {
-                            let gp = &state.gamepad;
+                            let gp = &state.raw.Gamepad;
                             let gs = GamepadState {
                                 buttons: gp.wButtons as u32,
                                 left_trigger: gp.bLeftTrigger,
