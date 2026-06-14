@@ -45,6 +45,3 @@ strip = true
 
 [profile.dev]
 opt-level = 0
-
-[patch.crates-io]
-brotli = { version = "=7.0.0" }
